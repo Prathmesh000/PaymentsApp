@@ -1,0 +1,52 @@
+.bank-card {
+    max-width: 800px;
+    margin: 50px auto;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+ 
+  .bank-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+ 
+  .card-header {
+    background-color: #4a69bd !important;
+  }
+ 
+  .card-body {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+  }
+ 
+  .btn-light {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+ 
+  .btn-light:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+ 
+  p {
+    margin-bottom: 0.5rem;
+  }
+ 
+  strong {
+    color: #2980b9;
+  }
+ 
+  .text-success {
+    color: #2ecc71 !important;
+  }
+ 
+  .text-danger {
+    color: #e74c3c !important;
+  }
+ 
+  hr {
+    margin: 1rem 0;
+    border-color: #d1d8e0;
+  }

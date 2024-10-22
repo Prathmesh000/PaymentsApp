@@ -1,0 +1,65 @@
+/* Container styling */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px; /* Increased padding for better spacing */
+    background-color: #f9f9f9;
+    border-radius: 15px; /* Slightly rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+    text-align: center;
+}
+
+/* Title styling */
+h1 {
+    font-size: 32px; /* Increased font size */
+    margin-bottom: 30px; /* Increased margin for spacing */
+    color: #333;
+    font-weight: bold; /* Bold title */
+}
+
+/* Button container styling */
+.buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    margin-top: 20px;
+}
+
+/* Button styling */
+button {
+    background-color: #007bff; /* Primary color */
+    color: white;
+    border: none;
+    padding: 16px 28px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+    margin: 0 10px; /* Space between buttons */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Active state for buttons */
+button:active {
+    transform: translateY(0); /* Return to original position on click */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 576px) {
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    button {
+        margin-bottom: 15px; /* Space between buttons in mobile view */
+        width: 100%; /* Full width buttons */
+        padding: 16px; /* Consistent padding */
+        font-size: 18px; /* Keep larger font size */
+    }
+}

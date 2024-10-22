@@ -1,0 +1,68 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of cards */
+  justify-content: center; /* Center the cards */
+  margin: 50px 0;
+}
+ 
+ 
+.interactive-card {
+  width: 45%; /* Width of each card, adjust as needed */
+  margin: 20px; /* Space between cards */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+ 
+.interactive-card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+ 
+.interactive-card .card-body {
+  padding: 30px; /* Padding for card body */
+}
+ 
+.interactive-card .card-title {
+  font-size: 24px; /* Title font size */
+  margin-bottom: 20px; /* Space below title */
+  color: #2c3e50; /* Title color */
+  font-weight: bold; /* Bold title */
+}
+ 
+.interactive-card .card-text {
+  font-size: 16px; /* Text font size */
+  color: #34495e; /* Text color */
+  margin-bottom: 30px; /* Space below text */
+}
+ 
+.interactive-card button {
+  padding: 10px 20px; /* Button padding */
+  font-size: 16px; /* Button font size */
+  font-weight: bold; /* Bold button text */
+  border-radius: 5px; /* Rounded button corners */
+}
+ 
+ 
+ 
+button.logout {
+  position: absolute; /* Position the button absolutely */
+  top: 10px; /* Adjust as necessary */
+  right: 10px; /* Adjust as necessary */
+  padding: 8px 12px; /* Add some padding */
+  background-color: #f44336; /* Red color for logout */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+}
+ 
+button.logout:hover {
+  background-color: #f30808; /* Darker red on hover */
+}

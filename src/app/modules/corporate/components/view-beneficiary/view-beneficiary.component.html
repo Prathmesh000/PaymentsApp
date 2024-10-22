@@ -1,0 +1,22 @@
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Beneficiary Name</th>
+            <th>Account Number</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of benefeciary">
+            <td data-label="Beneficiary Name">{{item.beneficiaryName}}</td>
+            <td data-label="Account Number">{{item.accountNumber}}</td>
+            <td data-label="Email">{{item.beneficiaryEmail}}</td>
+            <td data-label="Status">{{item.status}}</td>
+           <td data-label="Action">
+               <button [disabled]="item.status !== 'Approved'" (click)="Pay(item.corporate.corporateId)">Pay</button>
+           </td>
+        </tr>
+    </tbody>
+</table>

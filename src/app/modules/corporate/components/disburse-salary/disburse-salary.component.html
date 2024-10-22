@@ -1,0 +1,21 @@
+<div class="file-upload-container">
+  <h2>Upload Excel File</h2>
+  <form>
+  
+    <input type="file" id="fileInput" accept=".xlsx" (change)="onFileChange($event)">
+    <button type="button" (click)="onSubmit()">Submit</button>
+    
+      <div *ngIf="loading" class="spinner-container">
+        <div class="spinner-border text-primary loader" role="status">
+            <span class="sr-only"></span>
+            <span class="sr-only"></span>
+        </div>
+    
+       
+      </div>
+    <!-- Display error message if any -->
+    <div *ngIf="fileError" class="text-danger">
+      <small>{{ fileError }}</small>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+<div *ngIf="loading" class="text-center mb-4 loader spinner-container">
+    <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center text-dark mb-4">Unregistered Corporates</h2>
+
+    <div *ngIf="unregisteredCorporates.length <= 0" style="display: flex; justify-content: center;">
+        <h4>No corporate requests at the moment</h4>
+        </div>
+
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let corporate of unregisteredCorporates">
+            <div class="card shadow-lg border-0 rounded">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ corporate.corporateName }}</h5>
+                    <p class="card-text"><strong>Email:</strong> {{ corporate.corporateEmail }}</p>
+                    <p class="card-text"><strong>IFSC:</strong> {{ corporate.corporateIFSC }}</p>
+                    <p class="card-text"><strong>Balance:</strong> ${{ corporate.balance }}</p>
+                    <button (click)="viewDocument(corporate.filePath)" class="btn btn-info w-100 mb-2">View Document</button>
+                    <button (click)="approveCorporate(corporate.corporateId)" class="btn btn-approve w-100 mb-2">Approve</button>
+                    <button (click)="rejectCorporate(corporate.corporateId)" class="btn btn-approve w-100 mb-2">Reject</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

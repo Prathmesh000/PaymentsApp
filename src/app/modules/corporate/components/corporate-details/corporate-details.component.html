@@ -1,0 +1,28 @@
+<div *ngIf="loading" class="loading-container">
+    <div class="loader"></div>
+    <p>Loading...</p>
+</div>
+
+<div *ngIf="!loading" class="details-container">
+    <h2>Corporate Details</h2>
+    <div class="detail-item">
+        <strong>Name:</strong>
+        <span>{{corporateDetails?.corporateName}}</span>
+    </div>
+    <div class="detail-item">
+        <strong>Email:</strong>
+        <span>{{corporateDetails?.corporateEmail}}</span>
+    </div>
+    <div class="detail-item">
+        <strong>IFSC:</strong>
+        <span>{{corporateDetails?.corporateIFSC}}</span>
+    </div>
+    <div class="detail-item">
+        <strong>State:</strong>
+        <span>{{corporateDetails?.state}}</span>
+    </div>
+    <div class="detail-item">
+        <strong>City:</strong>
+        <span>{{corporateDetails?.city}}</span>
+    </div>
+</div>

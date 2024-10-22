@@ -1,0 +1,95 @@
+<form [formGroup]="bankForm" (ngSubmit)="onSubmit()" class="container mt-4">
+  <h2 class="mb-4">Bank Registration</h2>
+ 
+  <div class="mb-3">
+    <label for="bankName" class="form-label">Bank Name</label>
+    <input id="bankName" formControlName="bankName" type="text" class="form-control" required>
+    <div *ngIf="bankForm.get('bankName')?.invalid && bankForm.get('bankName')?.touched" class="text-danger">
+      <small *ngIf="bankForm.get('bankName')?.errors?.['required']">Bank Name is required.</small>
+      <small *ngIf="bankForm.get('bankName')?.errors?.['minlength']">Bank Name must be at least 3 characters
+        long.</small>
+    </div>
+  </div>
+ 
+  <div class="mb-3">
+    <label for="bankEmail" class="form-label">Bank Email</label>
+    <input id="bankEmail" formControlName="bankEmail" type="email" class="form-control" required>
+    <div *ngIf="bankForm.get('bankEmail')?.invalid && bankForm.get('bankEmail')?.touched" class="text-danger">
+      <small *ngIf="bankForm.get('bankEmail')?.errors?.['required']">Bank Email is required.</small>
+      <small *ngIf="bankForm.get('bankEmail')?.errors?.['email']">Enter a valid email.</small>
+    </div>
+  </div>
+ 
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input id="password" formControlName="password" type="password" class="form-control" required>
+    <div *ngIf="bankForm.get('password')?.invalid && bankForm.get('password')?.touched" class="text-danger">
+      <small *ngIf="bankForm.get('password')?.errors?.['required']">Password is required.</small>
+      <small *ngIf="bankForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters
+        long.</small>
+    </div>
+  </div>
+ 
+  <div class="mb-3">
+    <label for="bankIFSC" class="form-label">Bank IFSC</label>
+    <input id="bankIFSC" formControlName="bankIFSC" type="text" class="form-control" required>
+    <div *ngIf="bankForm.get('bankIFSC')?.invalid && bankForm.get('bankIFSC')?.touched" class="text-danger">
+      <small *ngIf="bankForm.get('bankIFSC')?.errors?.['required']">Bank IFSC is required.</small>
+    </div>
+  </div>
+ 
+  <!-- Additional Fields -->
+  <div class="mb-3">
+    <label for="bankCity" class="form-label">Bank City</label>
+    <input id="bankCity" formControlName="bankCity" type="text" class="form-control" required>
+    <div *ngIf="bankForm.get('bankCity')?.invalid && bankForm.get('bankCity')?.touched" class="text-danger">
+      <small *ngIf="bankForm.get('bankCity')?.errors?.['required']">Bank City is required.</small>
+    </div>
+  </div>
+ 
+  <div class="mb-3">
+    <label for="bankState" class="form-label">Bank State</label>
+    <input id="bankState" formControlName="bankState" type="text" class="form-control" required>
+    <div *ngIf="bankForm.get('bankState')?.invalid && bankForm.get('bankState')?.touched" class="text-danger">
+      <small *ngIf="bankForm.get('bankState')?.errors?.['required']">Bank State is required.</small>
+    </div>
+  </div>
+ 
+  <div class="mb-3">
+    <label for="branchName" class="form-label">Branch Name</label>
+    <input id="branchName" formControlName="branchName" type="text" class="form-control" required>
+    <div *ngIf="bankForm.get('branchName')?.invalid && bankForm.get('branchName')?.touched" class="text-danger">
+      <small *ngIf="bankForm.get('branchName')?.errors?.['required']">Branch Name is required.</small>
+    </div>
+  </div>
+ 
+  <div class="mb-3">
+    <label for="bankContact" class="form-label">Bank Contact</label>
+    <input id="bankContact" formControlName="bankContact" type="text" class="form-control" required>
+    <div *ngIf="bankForm.get('bankContact')?.invalid && bankForm.get('bankContact')?.touched" class="text-danger">
+      <small *ngIf="bankForm.get('bankContact')?.errors?.['required']">Bank Contact is required.</small>
+      <small *ngIf="bankForm.get('bankContact')?.errors?.['pattern']">Enter a valid 10-digit contact number.</small>
+    </div>
+  </div>
+ 
+  <div class="mb-3">
+    <label for="bankLicenseNumber" class="form-label">Bank License Number</label>
+    <input id="bankLicenseNumber" formControlName="bankLicenseNumber" type="text" class="form-control" required>
+    <div *ngIf="bankForm.get('bankLicenseNumber')?.invalid && bankForm.get('bankLicenseNumber')?.touched"
+      class="text-danger">
+      <small *ngIf="bankForm.get('bankLicenseNumber')?.errors?.['required']">Bank License Number is required.</small>
+    </div>
+  </div>
+ 
+  <div class="mb-3">
+    <label for="bankManagerName" class="form-label">Bank Manager Name</label>
+    <input id="bankManagerName" formControlName="bankManagerName" type="text" class="form-control" required>
+    <div *ngIf="bankForm.get('bankManagerName')?.invalid && bankForm.get('bankManagerName')?.touched"
+      class="text-danger">
+      <small *ngIf="bankForm.get('bankManagerName')?.errors?.['required']">Bank Manager Name is required.</small>
+    </div>
+  </div>
+ 
+  <button type="submit" class="btn btn-primary" [disabled]="bankForm.invalid">Submit</button>
+</form>
+ 

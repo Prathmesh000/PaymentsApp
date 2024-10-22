@@ -1,0 +1,90 @@
+<div class="container mt-5">
+    <form [formGroup]="corporateForm" (ngSubmit)="onSubmit()">
+      <div class="form-group mb-3">
+        <label for="corporateName">Corporate Name</label>
+        <input
+          type="text"
+          id="corporateName"
+          formControlName="corporateName"
+          class="form-control"
+          [ngClass]="{'is-invalid': corporateForm.get('corporateName')?.invalid && corporateForm.get('corporateName')?.touched}"
+        />
+        <div *ngIf="corporateForm.get('corporateName')?.invalid && corporateForm.get('corporateName')?.touched" class="invalid-feedback">
+          Corporate name is required and should be at least 3 characters long.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="corporateEmail">Corporate Email</label>
+        <input
+          type="email"
+          id="corporateEmail"
+          formControlName="corporateEmail"
+          class="form-control"
+          [ngClass]="{'is-invalid': corporateForm.get('corporateEmail')?.invalid && corporateForm.get('corporateEmail')?.touched}"
+        />
+        <div *ngIf="corporateForm.get('corporateEmail')?.invalid && corporateForm.get('corporateEmail')?.touched" class="invalid-feedback">
+          Please enter a valid email.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="corporateRegNumber">Corporate Registration Number</label>
+        <input
+          type="text"
+          id="corporateRegNumber"
+          formControlName="corporateRegNumber"
+          class="form-control"
+          [ngClass]="{'is-invalid': corporateForm.get('corporateRegNumber')?.invalid && corporateForm.get('corporateRegNumber')?.touched}"
+        />
+        <div *ngIf="corporateForm.get('corporateRegNumber')?.invalid && corporateForm.get('corporateRegNumber')?.touched" class="invalid-feedback">
+          Registration number is required.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="balance">Balance</label>
+        <input
+          type="number"
+          id="balance"
+          formControlName="balance"
+          class="form-control"
+          [ngClass]="{'is-invalid': corporateForm.get('balance')?.invalid && corporateForm.get('balance')?.touched}"
+        />
+        <div *ngIf="corporateForm.get('balance')?.invalid && corporateForm.get('balance')?.touched" class="invalid-feedback">
+          Balance must be a positive number.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="state">State</label>
+        <input
+          type="text"
+          id="state"
+          formControlName="state"
+          class="form-control"
+          [ngClass]="{'is-invalid': corporateForm.get('state')?.invalid && corporateForm.get('state')?.touched}"
+        />
+        <div *ngIf="corporateForm.get('state')?.invalid && corporateForm.get('state')?.touched" class="invalid-feedback">
+          State is required.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="city">City</label>
+        <input
+          type="text"
+          id="city"
+          formControlName="city"
+          class="form-control"
+          [ngClass]="{'is-invalid': corporateForm.get('city')?.invalid && corporateForm.get('city')?.touched}"
+        />
+        <div *ngIf="corporateForm.get('city')?.invalid && corporateForm.get('city')?.touched" class="invalid-feedback">
+          City is required.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="corporateForm.invalid">Submit</button>
+    </form>
+  </div>
+  

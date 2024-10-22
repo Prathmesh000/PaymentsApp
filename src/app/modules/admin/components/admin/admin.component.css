@@ -1,0 +1,76 @@
+
+.btn-gradient {
+    color: white;
+    border: none;
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+
+
+.btn-gradient-bank {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+}
+.btn-gradient-bank:hover {
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
+}
+
+
+.btn-gradient-corporate {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+.btn-gradient-corporate:hover {
+    background: linear-gradient(135deg, #27ae60, #1e8449);
+}
+
+
+.btn-gradient-banks {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+.btn-gradient-banks:hover {
+    background: linear-gradient(135deg, #c0392b, #96281b);
+}
+
+
+.btn-gradient-corporates {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+.btn-gradient-corporates:hover {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+
+.btn-gradient-payment {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+}
+.btn-gradient-payment:hover {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card i {
+    transition: transform 0.4s ease;
+  }
+  
+  .card:hover i {
+    transform: rotate(20deg);
+  }
+  
+  button.logout {
+    position: absolute; /* Position the button absolutely */
+    top: 10px; /* Adjust as necessary */
+    right: 10px; /* Adjust as necessary */
+    padding: 8px 12px; /* Add some padding */
+    background-color: #dd2315; /* Red color for logout */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+}

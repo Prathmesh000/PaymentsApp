@@ -1,0 +1,45 @@
+<form [formGroup]="beneficiaryForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="BeneficiaryName">Beneficiary Name</label>
+      <input id="BeneficiaryName" formControlName="BeneficiaryName" type="text" />
+      <div class="validation-error" *ngIf="beneficiaryForm.get('BeneficiaryName')?.invalid && beneficiaryForm.get('BeneficiaryName')?.touched">
+        Invalid Beneficiary Name
+      </div>
+    </div>
+  
+    <div>
+      <label for="AccountNumber">Account Number</label>
+      <input id="AccountNumber" formControlName="AccountNumber" type="number" />
+      <div class="validation-error" *ngIf="beneficiaryForm.get('AccountNumber')?.invalid && beneficiaryForm.get('AccountNumber')?.touched">
+        Invalid Account Number
+      </div>
+    </div>
+  
+    <div>
+      <label for="BeneficiaryEmail">Beneficiary Email</label>
+      <input id="BeneficiaryEmail" formControlName="BeneficiaryEmail" type="email" />
+      <div class="validation-error" *ngIf="beneficiaryForm.get('BeneficiaryEmail')?.invalid && beneficiaryForm.get('BeneficiaryEmail')?.touched">
+        Invalid Email Address
+      </div>
+    </div>
+  
+    <div>
+      <label for="BeneficiaryIFSC">Beneficiary IFSC</label>
+      <input id="BeneficiaryIFSC" formControlName="BeneficiaryIFSC" type="text" />
+      <div class="validation-error" *ngIf="beneficiaryForm.get('BeneficiaryIFSC')?.invalid && beneficiaryForm.get('BeneficiaryIFSC')?.touched">
+        Invalid IFSC
+      </div>
+    </div>
+  
+    <div>
+      <label for="Balance">Add Amount</label>
+      <input id="Balance" formControlName="Balance" type="number" />
+      <div class="validation-error" *ngIf="beneficiaryForm.get('Balance')?.invalid && beneficiaryForm.get('Balance')?.touched">
+        Invalid Balance
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="beneficiaryForm.invalid">Submit</button>
+  </form>
+  

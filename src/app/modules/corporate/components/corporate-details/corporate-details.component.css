@@ -1,0 +1,91 @@
+/* corporate-details.component.css */
+
+/* Loading Styles */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    font-size: 24px; /* Font size for loading text */
+    color: #007bff; /* Primary color */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center text */
+    animation: fade-in 0.5s ease; /* Fade-in animation */
+}
+
+.loader {
+    border: 10px solid #f3f3f3; /* Light grey */
+    border-top: 10px solid #007bff; /* Blue */
+    border-radius: 50%;
+    width: 50px; /* Size of the loader */
+    height: 50px; /* Size of the loader */
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+
+/* Keyframes for Spin Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Keyframes for Fade-in Animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Details Container Styles */
+.details-container {
+    max-width: 600px; /* Maximum width for details */
+    margin: 50px auto; /* Centered with margin */
+    padding: 30px; /* Padding for the container */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    position: relative; /* Position for decorative elements */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.details-container:hover {
+    transform: scale(1.03); /* Slightly increase size on hover */
+}
+
+.details-container h2 {
+    color: #2c3e50; /* Darker color for the heading */
+    margin-bottom: 20px; /* Space below heading */
+    text-align: center; /* Center heading */
+    font-family: 'Arial', sans-serif; /* Custom font */
+}
+
+/* Detail Item Styles */
+.detail-item {
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between label and value */
+    padding: 10px 0; /* Vertical padding */
+    border-bottom: 1px solid #eee; /* Divider line */
+    transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+.detail-item:last-child {
+    border-bottom: none; /* No bottom border on last item */
+}
+
+.detail-item:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Highlight effect on hover */
+}
+
+.detail-item strong {
+    color: #007bff; /* Primary color for labels */
+    font-weight: bold; /* Bold for labels */
+}
+
+.detail-item span {
+    color: #34495e; /* Color for text */
+}

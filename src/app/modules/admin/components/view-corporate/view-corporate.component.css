@@ -1,0 +1,92 @@
+/* Gradient Card Styles */
+.card-gradient {
+    background: linear-gradient(135deg, #1D2B64, #F8CDDA);
+    position: relative;
+    overflow: hidden;
+    color: #fff; /* Text color for contrast */
+    border-radius: 20px; /* Rounded corners for a softer look */
+    transition: transform 0.3s ease; /* Smooth transform effect */
+}
+ 
+.card-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text contrast */
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+    z-index: 0; /* Behind the card content */
+    pointer-events: none; /* Allow interactions with the card content */
+}
+ 
+.card-gradient:hover::before {
+    transform: scale(1); /* Scale effect on hover */
+}
+ 
+/* Card Styles */
+.card {
+    border: none; /* Remove default border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+ 
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
+}
+ 
+/* Ensure card content stays above the overlay */
+.card-body {
+    position: relative;
+    z-index: 1; /* Ensure content is above ::before */
+}
+ 
+/* Ensure buttons stay on top */
+button {
+    z-index: 2; /* Higher than the card body */
+    position: relative;
+}
+ 
+/* Title Styles */
+.card-title {
+    font-weight: bold;
+    font-size: 1.5rem; /* Increased font size */
+}
+ 
+/* Search Bar Styles */
+.search-input {
+    border-radius: 30px; /* Rounded search input */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+ 
+/* Placeholder text style */
+.search-input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Faded placeholder text */
+}
+ 
+/* Additional Styles */
+h2 {
+    font-size: 2.5rem; /* Increase title font size */
+    margin-bottom: 30px; /* More space below the title */
+}
+ 
+/* Padding for better spacing */
+.card-body {
+    padding: 20px;
+}
+ 
+/* Responsive Text Size for Mobile */
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1.25rem; /* Smaller font size for mobile */
+    }
+}
+ 
+/* Icon Styles */
+.card-text i {
+    color: #4CAF50; /* Icon color */
+    margin-right: 8px; /* Space between icon and text */
+}

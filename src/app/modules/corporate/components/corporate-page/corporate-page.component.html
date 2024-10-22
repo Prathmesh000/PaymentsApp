@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-auto" routerLink="/corporate/{{corpData.corporateId}}">Welcome {{corpName
+ 
+      ||
+      'Corporate' }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-outline-danger" (click)="logoutpage()">Log out</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+<div class="card-container">
+  <!-- <button class="logout" (click)="logoutpage()">Log out</button> -->
+ 
+  <div class="interactive-card" (click)="disburseSalaries()">
+    <div class="card-body">
+      <h4 class="card-title">Disburse Salaries</h4>
+      <p class="card-text">Click to disburse salaries to employees.</p>
+      <button class="btn btn-primary">Disburse Salaries</button>
+    </div>
+  </div>
+ 
+  <div class="interactive-card" (click)="viewCorporate()">
+    <div class="card-body">
+      <h4 class="card-title">View Corporate Details</h4>
+      <p class="card-text">Click to view corporate information.</p>
+      <button class="btn btn-primary">View Corporate</button>
+    </div>
+  </div>
+ 
+  <div class="interactive-card" (click)="viewEmployees()">
+    <div class="card-body">
+      <h4 class="card-title">View Employee Details</h4>
+      <p class="card-text">Click to view employee information.</p>
+      <button class="btn btn-primary">View Employees</button>
+    </div>
+  </div>
+ 
+  <div class="interactive-card" (click)="viewBenficiary()">
+    <div class="card-body">
+      <h4 class="card-title">View Beneficiaries</h4>
+      <p class="card-text">Click to view beneficiary information.</p>
+      <button class="btn btn-primary">View Beneficiary</button>
+    </div>
+  </div>
+ 
+  <div class="interactive-card" (click)="addBenificiary()">
+    <div class="card-body">
+      <h4 class="card-title">Add Beneficiary</h4>
+      <p class="card-text">Click to Add beneficiary information.</p>
+      <button class="btn btn-primary">Add Beneficiary</button>
+    </div>
+  </div>
+ 
+</div>

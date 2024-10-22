@@ -1,0 +1,82 @@
+/* Table Container */
+.table-container {
+    margin: 40px auto;
+    padding: 20px;
+    background: linear-gradient(145deg, #f3f4f6, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* General Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff; /* White background for the table */
+}
+
+.table thead {
+    background: linear-gradient(90deg, #007bff, #6610f2);
+    color: #fff;
+    text-align: center; /* Centering header text */
+}
+
+.table th,
+.table td {
+    padding: 15px 20px;
+    text-align: center; /* Centering cell text */
+    border-bottom: 1px solid #dee2e6;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.table tbody tr {
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(0, 123, 255, 0.1);
+    transform: translateY(-4px); /* More lift on hover for emphasis */
+}
+
+/* Status Indicator Styles */
+.status-active {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-inactive {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Icon Styles */
+.status-icon {
+    margin-right: 8px;
+}
+
+/* Pulse Animation for Active Status */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.status-active .status-icon {
+    animation: pulse 1.5s infinite; /* Pulse effect on active status */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .table th,
+    .table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

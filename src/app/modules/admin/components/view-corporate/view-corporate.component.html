@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <h2 class="text-center text-dark mb-4">Registered Corporates</h2>
+    <!-- Search Bar -->
+    <input type="text" class="form-control mb-4 search-input" placeholder="Search by corporate name..."
+        [(ngModel)]="searchTerm" (input)="filterCorporates()" />
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let corporate of filteredCorporates">
+            <div class="card shadow-lg border-0 rounded card-gradient">
+                <div class="card-body text-white">
+                    <p class="card-text"><i class="bi bi-person-fill"></i> <strong>Name:</strong> {{
+                        corporate.corporateName }}</p>
+                    <p class="card-text"><i class="bi bi-file-earmark-text"></i> <strong>Registration Number:</strong>
+                        {{ corporate.corporateRegNumber }}</p>
+                    <p class="card-text"><i class="bi bi-envelope-fill"></i> <strong>Email:</strong> {{
+                        corporate.corporateEmail }}</p>
+                    <p class="card-text"><i class="bi bi-cash-stack"></i> <strong>Balance:</strong> {{ corporate.balance
+                        }}</p>
+                    <p class="card-text"><i class="bi bi-bank"></i> <strong>IFSC:</strong> {{ corporate.corporateIFSC }}
+                    </p>
+                    <p class="card-text"><i class="bi bi-geo-alt"></i> <strong>City:</strong> {{ corporate.city }}</p>
+                    <p class="card-text"><i class="bi bi-geo-alt-fill"></i> <strong>State:</strong> {{ corporate.state
+                        }}</p>
+        
+                </div>
+ 
+                <button type="button" (click)="updateCorporate(corporate.corporateId)" style="border-radius: 13px; width: auto;">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<!-- Show spinner while loading -->
+<div *ngIf="loading" class="text-center spinner-container loader">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+
+
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Unregistered Banks</h2>
+
+    <div *ngIf="unregisteredBanks.length <= 0" style="display: flex; justify-content: center;">
+        <h4>No bank requests at the moment</h4>
+        </div>
+
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let bank of unregisteredBanks">
+            <div class="card shadow-lg border-0 rounded">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ bank.bankName }}</h5>
+                    <p class="card-text"><strong>Email:</strong> {{ bank.bankEmail }}</p>
+                    <p class="card-text"><strong>IFSC:</strong> {{ bank.bankIFSC }}</p>
+                    <p class="card-text"><strong>City:</strong> {{ bank.bankCity }}</p>
+                    <p class="card-text"><strong>State:</strong> {{ bank.bankState }}</p>
+                    <p class="card-text"><strong>Branch Name:</strong> {{ bank.branchName }}</p>
+                    <p class="card-text"><strong>Bank Contact:</strong> {{ bank.bankContact }}</p>
+                    <p class="card-text"><strong>Bank License Number:</strong> {{ bank.bankLicenseNumber }}</p>
+                    <p class="card-text"><strong>Branch Manager:</strong> {{ bank.bankManagerName }}</p>
+ 
+                    <button (click)="approveBank(bank.bankId)" class="btn btn-approve w-100">Approve</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+ 
+/* HEADER */
+.header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+ 
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+ 
+/* NAVIGATION */
+nav {
+    flex-grow: 1;
+    text-align: right;
+}
+ 
+.nav-links {
+    list-style: none;
+}
+ 
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+ 
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+ 
+.btn {
+    background: #f4b400;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+ 
+.hero {
+    background: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px; /* Adjust to prevent overlap with header */
+}
+ 
+.hero h2 {
+    font-size: 3rem;
+    color: #fff;
+}
+ 
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #f4f4f4;
+}
+ 
+.btn-primary {
+    background: #007BFF;
+    padding: 1rem 2rem;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+ 
+/* FEATURES SECTION */
+.features {
+    padding: 3rem 0;
+    background: #fff;
+}
+ 
+.features h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+ 
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+ 
+.feature-item {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+ 
+.feature-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+ 
+.feature-item p {
+    font-size: 1rem;
+}
+ 
+/* FOOTER */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+ 

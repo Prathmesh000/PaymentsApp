@@ -1,0 +1,19 @@
+<button (click)="downloadExcelSheet()">Download File</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Corporate Name</th>
+            <th>Registration Number</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let batch of batchpayments">
+            <td>{{batch.corporate.corporateName}}</td>
+            <td>{{batch.corporate.corporateRegNumber}}</td>
+            <td>{{batch.approveDate | date:'yyyy-MM-dd'}}</td>
+            <td>{{batch.status}}</td>
+        </tr>
+    </tbody>
+</table>

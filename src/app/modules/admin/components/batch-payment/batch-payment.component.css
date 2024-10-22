@@ -1,0 +1,67 @@
+/* Style for the table */
+.table {
+    width: 100%;
+    max-width: 1200px; /* Set a maximum width for larger screens */
+    margin: 0 auto;    /* Center the table */
+    border-collapse: collapse;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Hover effect for table rows */
+.table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Style for the button */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Align the button to the right */
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 20px;
+}
+
+/* Hover effect for button */
+button:hover {
+    background-color: #218838;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .table thead th, .table tbody td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

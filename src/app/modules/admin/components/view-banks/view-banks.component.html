@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <h2 class="text-center text-dark mb-4">Registered Banks</h2>
+    
+    <!-- Search Bar -->
+    <div class="mb-4">
+        <input type="text" placeholder="Search by bank name" class="form-control" [(ngModel)]="searchTerm" (input)="filterBanks()" />
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let bank of getCurrentPageBanks()">
+            <div class="card shadow-lg border-0 rounded card-gradient">
+                <div class="card-body text-white">
+                    <h5 class="card-title">{{ bank.bankName }}</h5>
+                    <p class="card-text"><i class="bi bi-envelope-fill"></i> <strong>Email:</strong> {{ bank.bankEmail }}</p>
+                    <p class="card-text"><i class="bi bi-bank"></i> <strong>IFSC:</strong> {{ bank.bankIFSC }}</p>
+                    <p class="card-text"><i class="bi bi-bank"></i> <strong>City:</strong> {{ bank.bankCity }}</p>
+                    <p class="card-text"><i class="bi bi-bank"></i> <strong>Contact:</strong> {{ bank.bankContact }}</p>
+                    <p class="card-text"><i class="bi bi-bank"></i> <strong>License Number:</strong> {{ bank.bankLicenseNumber }}</p>
+                    <p class="card-text"><i class="bi bi-bank"></i> <strong>Manager:</strong> {{ bank.bankManagerName }}</p>
+                    <p class="card-text"><i class="bi bi-bank"></i> <strong>State:</strong> {{ bank.bankState }}</p>
+                    <p class="card-text"><i class="bi bi-bank"></i> <strong>Branch:</strong> {{ bank.branchName }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="onPageChange(currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of [].constructor(totalPages); let i = index" class="page-item" [class.active]="currentPage === i + 1">
+                <a class="page-link" (click)="onPageChange(i + 1)">{{ i + 1 }}</a>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage === totalPages">
+                <a class="page-link" (click)="onPageChange(currentPage + 1)">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>

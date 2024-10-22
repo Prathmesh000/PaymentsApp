@@ -1,0 +1,85 @@
+/* Container Styles */
+.container {
+    background: linear-gradient(to right, #f0f4f8, #e1e8ed);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient Card Styles */
+.card-gradient {
+    background: linear-gradient(135deg, #ff6f61, #de6a9b);
+    position: relative;
+    overflow: hidden;
+    color: #fff; /* Text color for contrast */
+    border: 2px solid transparent; /* Border for hover effect */
+    transition: border-color 0.3s ease;
+}
+
+.card-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text contrast */
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+    z-index: 0; /* Send it behind card content */
+}
+
+.card-gradient:hover::before {
+    transform: scale(1); /* Scale effect on hover */
+}
+
+.card-gradient:hover {
+    border-color: #ff9f9f; /* Light border color on hover */
+}
+
+/* Card Styles */
+.card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Title Styles */
+.card-title {
+    font-weight: bold;
+    font-size: 1.5rem; /* Increased font size */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+}
+
+/* Additional Styles */
+h2 {
+    font-size: 2.5rem; /* Increase title font size */
+    margin-bottom: 30px; /* More space below the title */
+    text-align: center; /* Centering title */
+    color: #333; /* Dark text color */
+}
+
+/* Search Input Styles */
+input.form-control {
+    border-radius: 30px;
+    padding: 15px;
+    border: 2px solid #4CAF50; /* Custom border color */
+    transition: border-color 0.3s ease;
+}
+
+input.form-control:focus {
+    border-color: #81C784; /* Focused border color */
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); /* Glow effect on focus */
+}
+
+/* Padding for better spacing */
+.card-body {
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Bring card content above the overlay */
+}

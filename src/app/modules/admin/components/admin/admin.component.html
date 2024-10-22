@@ -1,0 +1,132 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-auto" routerLink="/admin">Welcome {{'Admin' }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-outline-danger" (click)="logoutpage()">Log out</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+      <div class="col-12 text-center mb-4">
+          <h2 class="display-5 text-primary">Admin Dashboard</h2>
+          <p class="lead text-muted">Choose a request type to view details</p>
+      </div>
+  </div>
+
+  
+  <!-- Row 1 with 3 cards per row -->
+  <div class="row justify-content-center g-4">
+      <!-- Bank Requests -->
+      <div class="col-md-4">
+          <div class="card shadow-lg h-100 border-0" style="border-radius: 15px;">
+              <div class="card-body text-center p-4">
+                  <i class="bi bi-bank mb-3" style="font-size: 3rem; color: #3498db;"></i>
+                  <h5 class="card-title mb-3">Bank Requests</h5>
+                  <p class="card-text">Manage and view all bank-related requests seamlessly.</p>
+                  <button (click)="viewBankRequest()" class="btn btn-gradient btn-primary w-100 mt-3">View Bank Requests</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Corporate Requests -->
+      <div class="col-md-4">
+          <div class="card shadow-lg h-100 border-0" style="border-radius: 15px;">
+              <div class="card-body text-center p-4">
+                  <i class="bi bi-briefcase-fill mb-3" style="font-size: 3rem; color: #2ecc71;"></i>
+                  <h5 class="card-title mb-3">Corporate Requests</h5>
+                  <p class="card-text">Handle corporate requests with ease.</p>
+                  <button (click)="viewCorporateRequest()" class="btn btn-gradient btn-success w-100 mt-3">View Corporate Requests</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- View Banks -->
+      <div class="col-md-4">
+          <div class="card shadow-lg h-100 border-0" style="border-radius: 15px;">
+              <div class="card-body text-center p-4">
+                  <i class="bi bi-bank mb-3" style="font-size: 3rem; color: #e74c3c;"></i>
+                  <h5 class="card-title mb-3">Banks</h5>
+                  <p class="card-text">Access and manage the list of banks connected to your system.</p>
+                  <button (click)="viewBanks()" class="btn btn-gradient btn-danger w-100 mt-3">View Banks</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Row 2 with 3 cards per row -->
+  <div class="row justify-content-center g-4 mt-4">
+      <!-- View Corporates -->
+      <div class="col-md-4">
+          <div class="card shadow-lg h-100 border-0" style="border-radius: 15px;">
+              <div class="card-body text-center p-4">
+                  <i class="bi bi-people-fill mb-3" style="font-size: 3rem; color: #f39c12;"></i>
+                  <h5 class="card-title mb-3">Corporates</h5>
+                  <p class="card-text">Check the corporates enrolled in the system.</p>
+                  <button (click)="ViewCorporates()" class="btn btn-gradient btn-warning w-100 mt-3">View Corporates</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Payment Requests -->
+      <div class="col-md-4">
+          <div class="card shadow-lg h-100 border-0" style="border-radius: 15px;">
+              <div class="card-body text-center p-4">
+                  <i class="bi bi-credit-card-fill mb-3" style="font-size: 3rem; color: #8e44ad;"></i>
+                  <h5 class="card-title mb-3">Payment Requests</h5>
+                  <p class="card-text">Manage all payment requests from various corporates.</p>
+                  <button (click)="viewPaymentRequests()" class="btn btn-gradient btn-secondary w-100 mt-3">View Payment Requests</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Beneficiaries -->
+      <div class="col-md-4">
+          <div class="card shadow-lg h-100 border-0" style="border-radius: 15px;">
+              <div class="card-body text-center p-4">
+                  <i class="bi bi-credit-card-fill mb-3" style="font-size: 3rem; color: #0d090f;"></i>
+                  <h5 class="card-title mb-3">Beneficiaries</h5>
+                  <p class="card-text">View all beneficiary requests from various corporates.</p>
+                  <button (click)="viewBenificiaryRequests()" class="btn btn-gradient btn-dark w-100 mt-3">View Beneficiary Requests</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Row 3 with 3 cards per row -->
+  <div class="row justify-content-center g-4 mt-4">
+      <!-- Payment Batch -->
+      <div class="col-md-4">
+          <div class="card shadow-lg h-100 border-0" style="border-radius: 15px;">
+              <div class="card-body text-center p-4">
+                  <i class="bi bi-credit-card-fill mb-3" style="font-size: 3rem; color: #e40f0f;"></i>
+                  <h5 class="card-title mb-3">Payment Batch</h5>
+                  <p class="card-text">View all payment requests from various corporates.</p>
+                  <button (click)="viewBatchPayment()" class="btn btn-danger btn-info w-100 mt-3">View Payment Requests</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Report -->
+      <div class="col-md-4">
+          <div class="card shadow-lg h-100 border-0" style="border-radius: 15px;">
+              <div class="card-body text-center p-4">
+                  <i class="bi bi-file-earmark-text-fill mb-3" style="font-size: 3rem; color: #8e44ad;"></i>
+                  <h5 class="card-title mb-3">Report</h5>
+                  <p class="card-text">View Report of employee payment</p>
+                  <button (click)="viewreport()" class="btn btn-gradient btn-success w-100 mt-3" >View Report</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

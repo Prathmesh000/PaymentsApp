@@ -1,0 +1,47 @@
+<div class="table-container">
+    <h2 class="text-center text-dark mb-4">Corporate Employees</h2>
+    <!-- Search Bar -->
+    <input 
+        type="text" 
+        class="form-control mb-4" 
+        placeholder="Search by employee name..." 
+        [(ngModel)]="searchTerm" 
+        (input)="filterEmployees()" 
+    />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of getCurrentPageEmployees()">
+                <td>{{ employee.fullName }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.salary | currency:'INR':'symbol':'1.2-2' }}</td>
+                <td [ngClass]="{'status-active': employee.status === 'Active', 'status-inactive': employee.status === 'Inactive'}">
+                    <i class="status-icon" [ngClass]="{'fas fa-check-circle': employee.status === 'Active', 'fas fa-times-circle': employee.status === 'Inactive'}"></i>
+                    {{ employee.status }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Pagination Controls -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="onPageChange(currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of [].constructor(totalPages); let i = index" class="page-item" [class.active]="currentPage === i + 1">
+                <a class="page-link" (click)="onPageChange(i + 1)">{{ i + 1 }}</a>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage === totalPages">
+                <a class="page-link" (click)="onPageChange(currentPage + 1)">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>

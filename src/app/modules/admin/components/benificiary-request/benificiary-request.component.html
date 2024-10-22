@@ -1,0 +1,43 @@
+
+<div *ngIf="loading" class="text-center spinner-container loader">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<div *ngIf="benificiaryRequest.length === 0 && !loading" style="display: flex; justify-content: center; margin-top: 20px;">
+    <h4>No beneficiary requests at the moment</h4>
+</div>
+
+<div class="container mt-4"  *ngIf="!loading && benificiaryRequest.length > 0">
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Corporate Name</th>
+                <th>Corporate Account Number</th>
+                <th>Beneficiary</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let beneficiary of benificiaryRequest">
+
+                <td>{{ beneficiary.corporate.corporateName }}</td>
+                <td>{{ beneficiary.corporate.corporateRegNumber }}</td>           
+                <td>
+                    {{ beneficiary.beneficiaryName }} <br>
+                    <small>Acc: {{ beneficiary.accountNumber }}</small> <br>
+                    <small>IFSC: {{ beneficiary.beneficiaryIFSC }}</small>
+                </td>
+                <td>{{ beneficiary.balance }}</td>
+                <td>{{ beneficiary.status }}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" (click)="approveRequest(beneficiary.beneficiaryId)">Approve</button>
+                    <button class="btn btn-danger btn-sm" (click)="rejectRequest(beneficiary.beneficiaryId)">Reject</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

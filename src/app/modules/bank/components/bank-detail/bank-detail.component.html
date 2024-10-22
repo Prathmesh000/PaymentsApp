@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-auto" routerLink="/bank/{{bankDetails?.bankId}}">Welcome {{ bankDetails?.bankName ||
+            'Bank' }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button class="btn btn-outline-danger" (click)="logoutpage()">Log out</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="card bank-card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h3 class="card-title mb-0">Bank Details</h3>
+        <!-- <button class="btn btn-toggle-details" (click)="toggleDetails()">
+        {{ isExpanded ? 'Hide Details' : 'View Details' }}
+      </button> -->
+    </div>
+ 
+    <div class="card-body" [@expandCollapse]="isExpanded ? 'expanded' : 'collapsed'">
+ 
+        <div class="row">
+            <div class="col-md-6">
+                <p class="card-text"><strong>Bank Name:</strong> {{ bankDetails?.bankName }}</p>
+                <p class="card-text"><strong>Bank Email:</strong> {{ bankDetails?.bankEmail }}</p>
+                <p class="card-text"><strong>Bank IFSC:</strong> {{ bankDetails?.bankIFSC }}</p>
+                <p class="card-text"><strong>City:</strong> {{ bankDetails?.bankCity }}</p>
+            </div>
+            <div class="col-md-6">
+                <p class="card-text"><strong>State:</strong> {{ bankDetails?.bankState }}</p>
+                <p class="card-text"><strong>Branch Name:</strong> {{ bankDetails?.branchName }}</p>
+                <p class="card-text"><strong>Contact:</strong> {{ bankDetails?.bankContact }}</p>
+                <p class="card-text"><strong>License Number:</strong> {{ bankDetails?.bankLicenseNumber }}</p>
+                <p class="card-text"><strong>Manager Name:</strong> {{ bankDetails?.bankManagerName }}</p>
+            </div>
+        </div>
+    </div>
+</div>
